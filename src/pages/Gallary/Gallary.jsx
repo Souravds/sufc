@@ -22,8 +22,8 @@ function Gallary() {
     <>
       <Title>Photo Gallery</Title>
       <Container>
-        {images.map((image) => (
-          <Image as={motion.img} alt="sufc" src={image.img} />
+        {images.map((image, index) => (
+          <Image key={index} as={motion.img} alt="sufc" src={image.img} />
         ))}
       </Container>
     </>
@@ -38,12 +38,14 @@ const Container = styled.div`
   flex-wrap: wrap;
   width: 100vw;
   gap: 1rem;
+  padding: 1rem;
 `;
 
 const Image = styled.img`
-  width: 40%;
-  object-fit: contain;
-  filter: grayscale(100%);
+  width: 20vw;
+
+  /* object-fit: contain; */
+  filter: contrast(85%) drop-shadow(8px 8px 10px gray);
   opacity: 0.9;
   border-radius: 10px;
   @media (max-width: 768px) {

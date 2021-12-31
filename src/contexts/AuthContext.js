@@ -39,13 +39,12 @@ export function AuthProvider({ children }) {
         setcurrentuser({
             ...user
         })
-
     }
 
     //login function
     function signin(email, password) {
-        return signInWithEmailAndPassword(email, password)
-        
+        const auth = getAuth()
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
     //logout function
@@ -53,7 +52,7 @@ export function AuthProvider({ children }) {
         const auth = getAuth()
         return signOut(auth)
         
-    }
+    } 
 
     const value = {
         currentuser, 

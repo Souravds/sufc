@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { useAuth } from './contexts/AuthContext';
 import Contact from "./pages/Contact/Contact";
 import Home from './pages/Home/Home';
+import SignIn from './pages/SignIn';
 import Store from "./pages/Store/Store";
 
 const App = () => {
@@ -22,6 +23,9 @@ const App = () => {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route path="/signin">
+            <SignIn />
           </Route>
         </Switch>
       </Router>

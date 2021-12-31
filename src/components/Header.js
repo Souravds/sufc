@@ -1,29 +1,57 @@
-import { Link } from "react-router-dom"
-import styled from "styled-components"
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Button } from '@mui/material';
+import Badge from '@mui/material/Badge';
+import IconButton from '@mui/material/IconButton';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { useAuth } from "../contexts/AuthContext";
+import AvatarOptions from "./AvaterOptions";
 
 export const Header = () => {
-
+  const {currentuser} = useAuth()
+  let username;
+  currentuser && (username = currentuser.displayName)
+  
   return(
   <Container>
-    <Logo>
-      <LogoImage src={process.env.PUBLIC_URL + '/sufc.png'}/>
-      <LogoTitle>SUFC</LogoTitle> 
-    </Logo>
+      <Link to="/">
+        <Logo>
+            <LogoImage src={process.env.PUBLIC_URL + '/sufc.png'}/>
+            <LogoTitle>SUFC</LogoTitle> 
+        </Logo>
+      </Link>
 
-    <Menu>
-      <MenuItem>
+    <StyledMenu>
+      <Button>
         <Link to="/">Home</Link>
-      </MenuItem>
-      <MenuItem>
+      </Button>
+      <Button>
         <Link to="/store">Store</Link> 
-      </MenuItem>
-      <MenuItem>
+      </Button>
+      <Button>
         <Link to="/contact">Contact Us</Link>
-      </MenuItem>
-      {/* <MenuItem>
-        <Link>{ user ? "Logout" : "Login" }</Link>
-      </MenuItem> */}
-    </Menu>
+      </Button>
+     
+    </StyledMenu>
+
+    <StyledMenu style={{gap: "10px"}}>
+    {
+      !username && 
+      <Button>
+        <Link to="/signin">Sign In</Link>
+      </Button>
+      }
+      <IconButton aria-label="cart">
+        <Badge badgeContent={4} color="success">
+          <ShoppingCartIcon />
+        </Badge>
+    </IconButton>
+
+    {/* avatar options */}
+    {
+      username && <AvatarOptions />    
+    }
+    </StyledMenu>
   </Container>
   )
   }
@@ -31,36 +59,33 @@ export const Header = () => {
 const Container = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  z-index: 4;
+  background-color: rgb(236, 240, 242);
   padding: 5px 0;
   position: sticky;
   top: 0;
-  background-color: rgb(30,32,33);
 `
 const Logo = styled.h2`
   display: flex;
   align-items: center;
   font-weight: 800;
-  margin-left: 35px;
-  flex: 1;
 `
 
-const Menu = styled.div`
+const StyledMenu = styled.div`
   font-weight: 800;
-  flex: 1;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 `
 
-const MenuItem =styled.div`
-  cursor: pointer;
-  transition: all .2s ease-in-out;
-  &:hover{
-    transform: scale(1.2);
-  }
-`
+// const MenuItem =styled.div`
+//   cursor: pointer;
+//   transition: all .2s ease-in-out;
+//   &:hover{
+//     transform: scale(1.2);
+//   }
+// `
 
 const LogoImage = styled.img`
   object-fit: cover;

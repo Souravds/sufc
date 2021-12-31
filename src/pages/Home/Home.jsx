@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import Contact from "../Contact/Contact";
 import Gallary from "../Gallary/Gallary";
 
 function Home() {
@@ -9,8 +10,8 @@ function Home() {
         <Heading
           as={motion.div}
           initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.8 }}
+          animate={{ opacity: 1, x: 40 }}
+          transition={{ duration: 1.5 }}
         >
           <Image alt="sufc" src={process.env.PUBLIC_URL + "sufc.png"} />
         </Heading>
@@ -19,7 +20,7 @@ function Home() {
             as={motion.h1}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.5, delay: 0.35 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
           >
             Soccer United FC
           </Title>
@@ -27,14 +28,24 @@ function Home() {
             as={motion.div}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.5, delay: 0.3 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
           >
-            - We are unbeatable.
+            - We are STRENGTH.
           </Intro>
         </div>
+        <motion.img
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.5 }}
+          src={process.env.PUBLIC_URL + "soccer.svg"}
+          style={{ width: "40%" }}
+          alt=""
+        />
       </Banner>
 
       <Gallary />
+
+      <Contact />
     </Container>
   );
 }
@@ -48,11 +59,14 @@ const Container = styled.div`
 `;
 
 const Banner = styled.div`
-  width: 100%;
+  width: 95%;
   height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
+  border-radius: 1rem;
+  flex-wrap: wrap;
 `;
 
 const Heading = styled.div``;
@@ -73,7 +87,7 @@ const Image = styled.img`
   width: 80%;
   height: 80%;
   object-fit: contain;
-  opacity: 0.9;
+  filter: drop-shadow(8px 8px 10px black);
 `;
 
 export default Home;
