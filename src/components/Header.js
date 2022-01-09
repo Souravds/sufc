@@ -1,7 +1,4 @@
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Button } from '@mui/material';
-import Badge from '@mui/material/Badge';
-import IconButton from '@mui/material/IconButton';
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useAuth } from "../contexts/AuthContext";
@@ -41,11 +38,11 @@ export const Header = () => {
         <Link to="/signin">Sign In</Link>
       </Button>
       }
-      <IconButton aria-label="cart">
+      {/* <IconButton aria-label="cart">
         <Badge badgeContent={4} color="success">
           <ShoppingCartIcon />
         </Badge>
-    </IconButton>
+    </IconButton> */}
 
     {/* avatar options */}
     {

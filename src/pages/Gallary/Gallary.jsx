@@ -36,15 +36,17 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 100vw;
+  width: 93vw;
+  border-radius: 1rem;
   gap: 1rem;
-  padding: 1rem;
+  padding: 2rem;
+  background-color: #fff;
 `;
 
 const Image = styled.img`
   width: 20vw;
-
-  /* object-fit: contain; */
+  height: 30vh;
+  object-fit: cover;
   filter: contrast(85%) drop-shadow(8px 8px 10px gray);
   opacity: 0.9;
   border-radius: 10px;

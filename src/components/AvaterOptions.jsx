@@ -42,8 +42,8 @@ function AvaterOptions() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
+        {/* <MenuItem onClick={handleClose}>Profile</MenuItem> */}
+        {/* <MenuItem onClick={handleClose}>My account</MenuItem> */}
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>
     </>

@@ -6,7 +6,7 @@ function Store() {
   return (
     <Container >
       <motion.h1 initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1.8}}>
-        Store Launched soon...
+        Store will Launched soon...
       </motion.h1>
     </Container>
   );

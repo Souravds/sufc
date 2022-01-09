@@ -38,7 +38,7 @@ function SignIn() {
     }
     const handleSignUp = async (e) => {
         setloading(true)
-        e.preventDefault()
+        e.preventDefault()  
         console.log("Fired");
 
         try {

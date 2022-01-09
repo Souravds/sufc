@@ -27,7 +27,7 @@ function Contact() {
               Diganta kaja shopping Centre,Bahaddarhat, Chittagong.
             </p>
             <p>
-              Phone no: <a href="tel:+8801852649890">01815518245</a>
+              Phone no: <a href="tel:+8801775383324">+8801775383324</a>
             </p>
           </motion.h3>
         </div>
@@ -41,7 +41,7 @@ function Contact() {
           scrolling="no"
           marginheight="0"
           marginwidth="0"
-          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=baddarhar%20kacha%20bajar+(SoccerUnited%20Sports%20Zone.)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          src="https://maps.google.com/maps?q=soccer%20united%20sports%20zone&t=&z=13&ie=UTF8&iwloc=&output=embed"
         >
           <a href="https://www.gps.ie/sport-gps/">bike gps</a>
         </iframe>
@@ -57,7 +57,7 @@ const Container = styled.div`
   justify-content: space-evenly;
   align-items: center;
   background-color: white;
-  padding: 5rem;
+  padding: 3rem;
   border-radius: 1rem;
   flex-wrap: wrap;
   gap: 1rem;

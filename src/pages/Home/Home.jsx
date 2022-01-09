@@ -10,7 +10,7 @@ function Home() {
         <Heading
           as={motion.div}
           initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 40 }}
+          animate={{ opacity: 1, x: 30 }}
           transition={{ duration: 1.5 }}
         >
           <Image alt="sufc" src={process.env.PUBLIC_URL + "sufc.png"} />
